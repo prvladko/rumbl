@@ -7,12 +7,6 @@ defmodule Rumbl.Accounts do
 
   alias Rumbl.Accounts.User
 
-  def create_user(attrs \\ %{}) do
-    %User{}
-    |> User.changeset(attrs)
-    |> Repo.insert()
-  end
-
   def get_user(id) do
     # Enum.find(list_users(), fn map -> map.id == id end)
     Repo.get(User, id)
