@@ -4,6 +4,7 @@ defmodule Rumbl.Accounts do
   """
 
   alias Rumbl.Repo
+
   alias Rumbl.Accounts.User
 
   def get_user(id) do
@@ -22,5 +23,9 @@ defmodule Rumbl.Accounts do
 
   def list_users do
     Repo.all(User)
+  end
+
+  def change_user(%User{} = user) do
+    User.changeset(user, %{})
   end
 end
